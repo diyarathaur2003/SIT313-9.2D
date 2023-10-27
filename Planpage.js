@@ -1,8 +1,7 @@
-
 import React from "react";
-import StripeCheckout from "react-stripe-checkout"; // Import the StripeCheckout component
+import StripeCheckout from "react-stripe-checkout";
 import './Plans.css';
-
+import { Link } from "react-router-dom"
 
 class RechargePlans extends React.Component {
   constructor(props) {
@@ -11,8 +10,6 @@ class RechargePlans extends React.Component {
       selectedPlan: null,
     };
   }
-
-
 
   handlePlanSelect = (plan) => {
     this.setState({
@@ -25,10 +22,8 @@ class RechargePlans extends React.Component {
     detailsDiv.style.display = detailsDiv.style.display === "block" ? "none" : "block";
   };
 
-  // Function to handle the Stripe token when payment is successful
   onToken = (token) => {
     console.log("Payment successful!", token);
-    // You can add code here to handle the successful payment, e.g., updating user's plan.
   };
 
   render() {
@@ -41,6 +36,7 @@ class RechargePlans extends React.Component {
         validity: "30 Days",
         colorClass: "plan-basic",
         icon: "💡",
+       
       },
       {
         id: 2,
@@ -50,6 +46,7 @@ class RechargePlans extends React.Component {
         validity: "30 Days",
         colorClass: "plan-standard",
         icon: "🚀",
+        
       },
       {
         id: 3,
@@ -59,6 +56,7 @@ class RechargePlans extends React.Component {
         validity: "30 Days",
         colorClass: "plan-premium",
         icon: "🌟",
+       
       },
     ];
 
@@ -80,15 +78,9 @@ class RechargePlans extends React.Component {
               <div id={`plan-details-${plan.id}`} className="plan-details">
                 <p>{plan.data}</p>
                 <p>{plan.validity}</p>
-                {/* Integrate Stripe Checkout here for Buy Now button */}
-                <StripeCheckout
-                  token={this.onToken}
-                  name={plan.name}
-                  currency="INR"
-                  amount={plan.price * 100}
-                  stripeKey="pk_test_51NzIaCSJIpB3aTBWfN9k4xuje2t2Lr2ZRcNXSum1IaRBJA7JBA2AtSytok1zIQfrDDJIDyEQEn6nFRnKCUKp0HxE00r3yv2Wzl"
-                  label="Buy Now"
-                />
+                <Link to="https://buy.stripe.com/test_4gw14r09Y5cD9BS000">
+                  <button className="button">BUY NOW</button>
+                </Link>
               </div>
             </div>
           ))}
