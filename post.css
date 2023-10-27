@@ -1,0 +1,63 @@
+/* post.css */
+
+/* Add these styles to your 'post.css' file or your preferred stylesheet */
+
+/* Container for the entire form */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Title style */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Text input for the question */
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* CodeMirror container */
+.CodeMirror {
+  height: 300px; /* Adjust the height as needed */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Your Code title style */
+h2 {
+  font-size: 20px;
+  margin: 20px 0;
+  color: #333;
+}
+
+/* Post button style */
+button {
+  display: flex;
+  justify-content:center;
+  background-color: #007BFF; /* Blue color */
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 150px;
+}
+
+
+/* Button hover effect */
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
