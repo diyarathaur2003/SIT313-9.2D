@@ -38,6 +38,9 @@ function Web() {
             <li>
               <Link to="query">Query</Link>
             </li>
+            <li>
+              <Link to="/post">Post</Link> {/* Add the link to Planpage */}
+            </li>
 
           </ul>
         </nav>
